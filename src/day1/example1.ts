@@ -1,0 +1,3 @@
+(() => {
+  let holloWorld = "holloWorld";
+})();
