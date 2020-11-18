@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kiyu/ts-study/issues"
   },
-  "homepage": "https://github.com/kiyu/ts-study#readme"
+  "homepage": "https://github.com/kiyu/ts-study#readme",
+  "dependencies": {
+    "typescript": "^4.0.5"
+  }
 }
