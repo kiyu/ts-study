@@ -6,8 +6,8 @@ import { isIndexedAccessTypeNode } from "typescript";
   let isDone: boolean = true;
 
   //Null と undefined は一応通る
-  isDone = null
-  isDone = undefined
+//  isDone = null
+//  isDone = undefined
 
   //それ以外はNG
   //isDone = 123
@@ -112,7 +112,7 @@ import { isIndexedAccessTypeNode } from "typescript";
   let u: undefined = undefined;
   let n: null = null;
 
-  u = null;
-  n = undefined;
+//  u = null;
+//  n = undefined;
   
 })();
