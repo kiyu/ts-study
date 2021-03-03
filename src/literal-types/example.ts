@@ -33,12 +33,14 @@ In contrast, using const to declare a variable will inform TypeScript that this 
 // - constを使用しても、helloWorldは変更されません。
 
 // So, TypeScript sets the type to be "Hello World", not string
-// - したがって、TypeScriptは、タイプを文字列ではなく「HelloWorld」に設定します。
+// - したがって、TypeScriptは、タイプを文字列ではなく「HelloWorld型」に設定します。
 const helloWorld = "Hello World";
 
-//NG
+//NG 
 //helloWorld = "aaaa";
 
+const sumfunc = (prop:'Hello World') => {}
+//sumfunc(helloWorld)
 
 // On the other hand, a let can change, and so the compiler declares it a string
 // - 一方、letは変更される可能性があるため、コンパイラはそれを文字列として宣言します
@@ -58,7 +60,7 @@ The process of going from an infinite number of potential cases (there are an in
 /* String Literal Types 
 
 In practice string literal types combine nicely with union types, type guards, and type aliases.
-- 実際には、文字列リテラル型は、共用体型、型ガード、および型エイリアスとうまく組み合わされます。
+- 実際には、文字列リテラル型は、[union types]、[type guards]、および型エイリアスとうまく組み合わされます。
 
 You can use these features together to get enum-like behavior with strings.
 - これらの機能を一緒に使用して、文字列で列挙型のような動作を得ることができます。
@@ -82,7 +84,12 @@ You can use these features together to get enum-like behavior with strings.
 
   let button = new UIElement();
   button.animate(0, 0, "ease-in");
-  button.animate(0, 0, "uneasy");
+//  button.animate(0, 0, "uneasy");
+
+//型が一致しないのでNG
+//let easing = "ease-in";
+//button.animate(0, 0, easing);
+
   //Argument of type '"uneasy"' is not assignable to parameter of type 'Easing'.
   // - タイプ '"uneasy"'の引数は、タイプ 'Easing'のパラメーターに割り当てることができません。
 
@@ -96,14 +103,15 @@ You can use these features together to get enum-like behavior with strings.
   /*
   String literal types can be used in the same way to distinguish overloads:
   - 文字列リテラルタイプは、オーバーロードを区別するために同じ方法で使用できます。
-   */
+  */
+ /* 
   function createElement(tagName: "img"): HTMLImageElement;
   function createElement(tagName: "input"): HTMLInputElement;
   // ... more overloads ...
   function createElement(tagName: string): Element {
     // ... code goes here ...
   }
-
+*/
   /*
   Numeric Literal Types
 
@@ -125,7 +133,7 @@ You can use these features together to get enum-like behavior with strings.
     tileSize: 8 | 16 | 32;
   }
   
-  setupMap({ lng: -73.935242, lat: 40.73061, tileSize: 16 });
+  //setupMap({ lng: -73.935242, lat: 40.73061, tileSize: 16 });
 
   /*
   Boolean Literal Types
